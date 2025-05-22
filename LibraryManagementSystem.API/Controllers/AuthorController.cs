@@ -1,13 +1,13 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using LibraryManagementSystem.API.Models;
+using LibraryManagementSystem.Core.Models;
 using Microsoft.EntityFrameworkCore;
-using LibraryManagementSystem.API.Data;
-using LibraryManagementSystem.API.DTOs;
+using LibraryManagementSystem.Core.Data;
+using LibraryManagementSystem.Core.DTOs;
 using Microsoft.AspNetCore.Authorization;
 
 namespace LibraryManagementSystem.API.Controllers
 {
-    [Authorize]
+    [Authorize (Roles = "Admin")]
     [ApiController]
     [Route("api/[controller]")]
     public class AuthorController : ControllerBase
@@ -65,10 +65,11 @@ namespace LibraryManagementSystem.API.Controllers
             return Ok(authorDto);
         }
 
-
+        [Authorize(Roles =  "Admin")]
         [HttpPost]
         public async Task<IActionResult> CreateAuthor([FromBody] CreateAuthorDTO dto)
         {
+            
             var author = new Author
             {
                 Name = dto.Name,
@@ -80,11 +81,12 @@ namespace LibraryManagementSystem.API.Controllers
 
              
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpPut("{id}")]
 
         public async Task<IActionResult> UpdateAuthor(int id ,CreateAuthorDTO dto)
         {
+             
             var author = await _context.authors.FindAsync(id);
             if (author == null)
             {
@@ -99,10 +101,11 @@ namespace LibraryManagementSystem.API.Controllers
             return Ok(author);
 
         }
-
+        [Authorize(Roles = "Admin")]
         [HttpDelete("{id}")]
         public async Task <IActionResult> DeleteAuthor(int id)
         {
+
             var author = await _context.authors.FindAsync(id);
             if ( author == null)
             {

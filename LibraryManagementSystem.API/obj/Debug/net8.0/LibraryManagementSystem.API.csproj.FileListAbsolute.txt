@@ -173,3 +173,12 @@ C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManage
 C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.Internal.dll
 C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\Microsoft.AspNetCore.Cryptography.KeyDerivation.dll
 C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
+C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.dll
+C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.FileExtensions.dll
+C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\Microsoft.Extensions.Configuration.Json.dll
+C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Abstractions.dll
+C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\Microsoft.Extensions.FileProviders.Physical.dll
+C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\Microsoft.Extensions.FileSystemGlobbing.dll
+C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\Microsoft.Extensions.ObjectPool.dll
+C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\LibraryManagementSystem.Core.dll
+C:\Users\olusesan.ayomide\source\repos\LibraryManagementSystem.API\LibraryManagementSystem.API\bin\Debug\net8.0\LibraryManagementSystem.Core.pdb

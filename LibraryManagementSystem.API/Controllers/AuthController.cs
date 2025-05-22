@@ -1,5 +1,6 @@
-﻿using LibraryManagementSystem.API.Data;
-using LibraryManagementSystem.API.Models;
+﻿using LibraryManagementSystem.Core.Data;
+using LibraryManagementSystem.Core.Models;
+using LibraryManagementSystem.Core.Helpers;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.IdentityModel.Tokens;
 using System.IdentityModel.Tokens.Jwt;
@@ -27,7 +28,7 @@ namespace LibraryManagementSystem.API.Controllers
             var user = _context.Users.SingleOrDefault(u => u.UserName == model.Username);
 
             if (user == null || !PasswordHelper.VerifyPassword(user.PasswordHash, model.Password))
-                return Unauthorized("Invalid credentials");
+                throw new UnauthorizedAccessException();
 
 
             var jwtSettings = _configuration.GetSection("JwtSettings");

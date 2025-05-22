@@ -9,7 +9,7 @@
     "Parameters": [
       {
         "Name": "model",
-        "Type": "LibraryManagementSystem.API.Models.LoginModel",
+        "Type": "LibraryManagementSystem.Core.Models.LoginModel",
         "IsRequired": true
       }
     ],
@@ -35,7 +35,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "LibraryManagementSystem.API.DTOs.CreateAuthorDTO",
+        "Type": "LibraryManagementSystem.Core.DTOs.CreateAuthorDTO",
         "IsRequired": true
       }
     ],
@@ -72,7 +72,7 @@
       },
       {
         "Name": "dto",
-        "Type": "LibraryManagementSystem.API.DTOs.CreateAuthorDTO",
+        "Type": "LibraryManagementSystem.Core.DTOs.CreateAuthorDTO",
         "IsRequired": true
       }
     ],
@@ -130,7 +130,7 @@
     "Parameters": [
       {
         "Name": "dto",
-        "Type": "LibraryManagementSystem.API.DTOs.CreateBookDTO",
+        "Type": "LibraryManagementSystem.Core.DTOs.CreateBookDTO",
         "IsRequired": true
       }
     ],
@@ -167,7 +167,7 @@
       },
       {
         "Name": "dto",
-        "Type": "LibraryManagementSystem.API.DTOs.CreateBookDTO",
+        "Type": "LibraryManagementSystem.Core.DTOs.CreateBookDTO",
         "IsRequired": true
       }
     ],

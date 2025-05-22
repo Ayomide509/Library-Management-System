@@ -1,10 +1,16 @@
-using LibraryManagementSystem.API.Data;
+using LibraryManagementSystem.Core.Data;
 using Microsoft.EntityFrameworkCore;
 using LibraryManagementSystem.API.Configurations;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using LibraryManagementSystem.API.Models;
-using LibraryManagementSystem.API;
+using LibraryManagementSystem.Core.Models;
+using LibraryManagementSystem.Core.Helpers;
+using LibraryManagementSystem.API.MiddleWare;
+using System.Text.Json;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+
+
+
 
 var builder = WebApplication.CreateBuilder(args);
 var jwtSettings = builder.Configuration.GetSection("JwtSettings");
@@ -36,8 +42,36 @@ builder.Services.AddAuthentication("Bearer")
                 Encoding.UTF8.GetBytes(jwtSettings["Key"]!)
             )
         };
-    });
 
+        //  Custom 401 and 403 response messages
+        options.Events = new JwtBearerEvents
+        {
+            OnChallenge = context =>
+            {
+                context.HandleResponse(); // prevent default behavior
+                context.Response.StatusCode = 401;
+                context.Response.ContentType = "application/json";
+                var result = JsonSerializer.Serialize(new
+                {
+                    status = 401,
+                    message = "You are not authorized to access this resource"
+                });
+                return context.Response.WriteAsync(result);
+            },
+            OnForbidden = context =>
+            {
+                context.Response.StatusCode = 403;
+                context.Response.ContentType = "application/json";
+                var result = JsonSerializer.Serialize(new
+                {
+                    status = 403,
+                    message = "You do not have permission to perform this action"
+                });
+                return context.Response.WriteAsync(result);
+            }
+        };
+    });
+ 
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
@@ -73,6 +107,10 @@ builder.Services.AddSwaggerGen(c =>
 
 
 var app = builder.Build();
+
+app.UseMiddleware<ErrorHandlingMiddleware>();
+app.UseMiddleware<RequestLoggingMiddleware>();     
+ 
 
 app.UseAuthentication();
 app.UseAuthorization();
