@@ -3,11 +3,11 @@ A backend-only ASP.NET Core Web API for managing books and authors in a library 
 Features
 
 CRUD Operations: Full Create, Read, Update, Delete for Books and Authors.
-🔐 JWT Authentication: Secure endpoints with JSON Web Tokens.
-🗂️ Entity Framework Core: Database integration with migrations and seeding.
-🛡️ Security: OWASP-compliant input validation, password hashing, and error handling.
-🧪 Unit Testing: Core functions tested with xUnit and mocked data.
-⚙️ Modular Design: Structured for scalability and future enhancements.
+- JWT Authentication: Secure endpoints with JSON Web Tokens.
+- Entity Framework Core: Database integration with migrations and seeding.
+- Security: OWASP-compliant input validation, password hashing, and error handling.
+- Unit Testing: Core functions tested with xUnit and mocked data.
+- Modular Design: Structured for scalability and future enhancements.
 
 Tech Stack
 
